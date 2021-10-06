@@ -6,9 +6,9 @@ using namespace std;
 
 
 //function prototypes
-void MySum(float m,float n);
-void MyDifference(float m, float n);
-void MyProduct(float p, float q);
+float MySum(float m,float n);
+float MyDifference(float m, float n);
+float MyProduct(float p, float q);
 void Square(float side);
 void Rectangle(float length, float breadth);
 
@@ -16,36 +16,43 @@ void Rectangle(float length, float breadth);
 
 int main()
 {
-
+	float result;
 	float x, y; //local scope means available only inside this main function
 	cout << "\nEnter the value for x: ";
 	cin >> x;
 	cout << "\nEnter the value for y: ";
 	cin >> y;
 
-	MySum(x,y);//function call
-	MyDifference(x, y);
-	MyProduct(x, y);
+	result = MySum(x,y);//function call and receives the returned value
+	cout << "\nAddition Result = "<<result <<endl;
+	result = MyDifference(x, y);
+	cout << "\nSubtraction Result = " << result << endl;
+	result = MyProduct(x, y);
+	cout << "\nMultiplication Result = " << result << endl;
 	Square(x);
+	//cout << "\nResult = " << result << endl;
 	Rectangle(x, y);
+	//cout << "\nResult = " << result << endl;
+
 }
 
 //function with dummy parameters /arguments
-void MySum(float m, float n) {
+float MySum(float m, float n) {
 	//adding two numbers
 
-	cout << "\nThe sum of two numbers is: " << (m + n) << endl;
+	return (m + n);
 }
 
-void MyDifference(float x,float y) {
-	//subtracting a number 
-	
-	cout << "\nThe difference of two numbers is: " << (x-y) << endl;
-}
-void MyProduct(float p, float q) {
+float MyDifference(float x, float y) {
 	//subtracting a number 
 
-	cout << "\nThe product of two numbers is: " << (p * q) << endl;
+	return(x - y);
+}
+
+float MyProduct(float p, float q) {
+	//subtracting a number 
+
+	return (p * q);
 }
 
 void Square(float side) {
